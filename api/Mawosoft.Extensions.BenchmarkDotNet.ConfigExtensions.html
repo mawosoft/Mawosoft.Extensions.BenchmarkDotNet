@@ -1,0 +1,1429 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ConfigExtensions
+   | Mawosoft Extensions for BenchmarkDotNet </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ConfigExtensions
+   | Mawosoft Extensions for BenchmarkDotNet ">
+    <meta name="generator" content="docfx 2.59.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions">
+  
+  
+  <h1 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions" class="text-break">Class ConfigExtensions
+  </h1>
+  <div class="markdown level0 summary"><p><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> and <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.IConfig.html">IConfig</a> extension methods for replacing parts
+of an existing config - for example, default columns with custom ones.</p>
+</div>
+  <div class="markdown level0 conceptual"><p>When building a config in <em>BenchmarkDotNet</em> to run your benchmarks, there are essentially two ways of doing it:</p>
+<ul>
+<li>You can start from scratch with an empty config and most likely end up forgetting to add some essential item.</li>
+<li>You can use the predefined
+<a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.DefaultConfig.html#BenchmarkDotNet_Configs_DefaultConfig_Instance">DefaultConfig.Instance</a>
+and probably get some ingredients you don&#39;t have any use for, but which are hard to get rid of
+once they are part of the config.</li>
+</ul>
+<p>This is where these extensions come in handy. You can use the default config - or any other preexisting one -
+and replace parts of it. Don&#39;t like the default three exporters (HTML, CSV, GitHub Markdown) and prefer the leaner
+Console Markdown exporter?</p>
+<pre><code class="lang-csharp">ManualConfig config = DefaultConfig.Instance.ReplaceExporters(MarkdownExporter.Console);
+</code></pre><p>Only want the statistical Mean column, not all the other ones, like StdDev and Error?</p>
+<pre><code class="lang-csharp">ManualConfig config = DefaultConfig.Instance.ReplaceColumnCategory(StatisticColumn.Mean);
+</code></pre><p>Which of course leads to the custom columns that are part of this library:</p>
+<pre><code class="lang-csharp">ManualConfig config = DefaultConfig.Instance.ReplaceColumnCategory(
+    new JobColumnSelectionProvider(&quot;-run +runstrategy&quot;),
+    new RecyclableParamsColumnProvider()
+    );
+</code></pre><div class="NOTE"><h5>Note</h5><p>When you use the extensions with a <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a>, that config is modified and returned.</p>
+<p>When you use the extensions with any other <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.IConfig.html">IConfig</a> (as in the examples above), the source config
+remains untouched and a new instance of <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with the changes applied is returned.</p>
+</div>
+</div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">ConfigExtensions</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.html">Mawosoft.Extensions.BenchmarkDotNet</a></h6>
+  <h6><strong>Assembly</strong>: Mawosoft.Extensions.BenchmarkDotNet.dll</h6>
+  <h5 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class ConfigExtensions</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L85">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_RemoveColumnsByCategory_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.RemoveColumnsByCategory*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_RemoveColumnsByCategory_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Columns_ColumnCategory___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.RemoveColumnsByCategory(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Columns.ColumnCategory[])">RemoveColumnsByCategory(IConfig, ColumnCategory[])</h4>
+  <div class="markdown level1 summary"><p>Removes existing columns of the specified category or categories.</p>
+</div>
+  <div class="markdown level1 conceptual"><div class="NOTE"><h5>Note</h5><p>In <em>BenchmarkDotNet</em>, the <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Columns.ColumnCategory.html#BenchmarkDotNet_Columns_ColumnCategory_Job">ColumnCategory.Job</a> encompasses not only the
+real job characteristic columns, but also the <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Columns.TargetMethodColumn.html">method descriptor columns</a> and the
+<a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Columns.CategoriesColumn.html">categories column</a>.</p>
+<p>This method <strong>will not</strong> remove the latter two column types if the removal of
+<a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Columns.ColumnCategory.html#BenchmarkDotNet_Columns_ColumnCategory_Job">ColumnCategory.Job</a> is requested.</p>
+</div>
+</div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig RemoveColumnsByCategory(this IConfig config, params ColumnCategory[] categories)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.IConfig.html">IConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The source config.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Columns.ColumnCategory.html">ColumnCategory</a>[]</td>
+        <td><span class="parametername">categories</span></td>
+        <td><p>The column categories to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>A new instance of <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L73">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_RemoveColumnsByCategory_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.RemoveColumnsByCategory*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_RemoveColumnsByCategory_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Columns_ColumnCategory___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.RemoveColumnsByCategory(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Columns.ColumnCategory[])">RemoveColumnsByCategory(ManualConfig, ColumnCategory[])</h4>
+  <div class="markdown level1 summary"><p>Removes existing columns of the specified category or categories.</p>
+</div>
+  <div class="markdown level1 conceptual"><div class="NOTE"><h5>Note</h5><p>In <em>BenchmarkDotNet</em>, the <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Columns.ColumnCategory.html#BenchmarkDotNet_Columns_ColumnCategory_Job">ColumnCategory.Job</a> encompasses not only the
+real job characteristic columns, but also the <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Columns.TargetMethodColumn.html">method descriptor columns</a> and the
+<a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Columns.CategoriesColumn.html">categories column</a>.</p>
+<p>This method <strong>will not</strong> remove the latter two column types if the removal of
+<a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Columns.ColumnCategory.html#BenchmarkDotNet_Columns_ColumnCategory_Job">ColumnCategory.Job</a> is requested.</p>
+</div>
+</div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig RemoveColumnsByCategory(this ManualConfig config, params ColumnCategory[] categories)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The config to be changed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Columns.ColumnCategory.html">ColumnCategory</a>[]</td>
+        <td><span class="parametername">categories</span></td>
+        <td><p>The column categories to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>The existing <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L137">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceAnalysers_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceAnalysers*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceAnalysers_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Analysers_IAnalyser___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceAnalysers(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Analysers.IAnalyser[])">ReplaceAnalysers(IConfig, IAnalyser[])</h4>
+  <div class="markdown level1 summary"><p>Replaces all analysers with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceAnalysers(this IConfig config, params IAnalyser[] newAnalysers)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.IConfig.html">IConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The source config.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Analysers.IAnalyser.html">IAnalyser</a>[]</td>
+        <td><span class="parametername">newAnalysers</span></td>
+        <td><p>The new analyzers to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>A new instance of <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L129">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceAnalysers_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceAnalysers*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceAnalysers_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Analysers_IAnalyser___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceAnalysers(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Analysers.IAnalyser[])">ReplaceAnalysers(ManualConfig, IAnalyser[])</h4>
+  <div class="markdown level1 summary"><p>Replaces all analyzers with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceAnalysers(this ManualConfig config, params IAnalyser[] newAnalysers)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The config to be changed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Analysers.IAnalyser.html">IAnalyser</a>[]</td>
+        <td><span class="parametername">newAnalysers</span></td>
+        <td><p>The new analyzers to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>The existing <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L44">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceColumnCategory_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceColumnCategory_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Columns_IColumn___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Columns.IColumn[])">ReplaceColumnCategory(IConfig, IColumn[])</h4>
+  <div class="markdown level1 summary"><p>Replaces existing columns belonging to the same category or categories as <code>newColumns</code>
+with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceColumnCategory(this IConfig config, params IColumn[] newColumns)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.IConfig.html">IConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The source config.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Columns.IColumn.html">IColumn</a>[]</td>
+        <td><span class="parametername">newColumns</span></td>
+        <td><p>The new columns to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>A new instance of <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L67">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceColumnCategory_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceColumnCategory_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Columns_IColumnProvider___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Columns.IColumnProvider[])">ReplaceColumnCategory(IConfig, IColumnProvider[])</h4>
+  <div class="markdown level1 summary"><p>Replaces existing columns belonging to the same category or categories as <code>newColumnProviders</code>
+with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceColumnCategory(this IConfig config, params IColumnProvider[] newColumnProviders)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.IConfig.html">IConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The source config.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Columns.IColumnProvider.html">IColumnProvider</a>[]</td>
+        <td><span class="parametername">newColumnProviders</span></td>
+        <td><p>The new column providers to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>A new instance of <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L30">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceColumnCategory_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceColumnCategory_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Columns_IColumn___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Columns.IColumn[])">ReplaceColumnCategory(ManualConfig, IColumn[])</h4>
+  <div class="markdown level1 summary"><p>Replaces existing columns belonging to the same category or categories as <code>newColumns</code>
+with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceColumnCategory(this ManualConfig config, params IColumn[] newColumns)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The config to be changed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Columns.IColumn.html">IColumn</a>[]</td>
+        <td><span class="parametername">newColumns</span></td>
+        <td><p>The new columns to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>The existing <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L52">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceColumnCategory_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceColumnCategory_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Columns_IColumnProvider___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Columns.IColumnProvider[])">ReplaceColumnCategory(ManualConfig, IColumnProvider[])</h4>
+  <div class="markdown level1 summary"><p>Replaces existing columns belonging to the same category or categories as <code>newColumnProviders</code>
+with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceColumnCategory(this ManualConfig config, params IColumnProvider[] newColumnProviders)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The config to be changed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Columns.IColumnProvider.html">IColumnProvider</a>[]</td>
+        <td><span class="parametername">newColumnProviders</span></td>
+        <td><p>The new column providers to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>The existing <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L124">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceDiagnosers_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceDiagnosers*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceDiagnosers_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Diagnosers_IDiagnoser___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceDiagnosers(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Diagnosers.IDiagnoser[])">ReplaceDiagnosers(IConfig, IDiagnoser[])</h4>
+  <div class="markdown level1 summary"><p>Replaces all diagnosers with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceDiagnosers(this IConfig config, params IDiagnoser[] newDiagnosers)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.IConfig.html">IConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The source config.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Diagnosers.IDiagnoser.html">IDiagnoser</a>[]</td>
+        <td><span class="parametername">newDiagnosers</span></td>
+        <td><p>The new diagnosers to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>A new instance of <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L116">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceDiagnosers_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceDiagnosers*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceDiagnosers_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Diagnosers_IDiagnoser___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceDiagnosers(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Diagnosers.IDiagnoser[])">ReplaceDiagnosers(ManualConfig, IDiagnoser[])</h4>
+  <div class="markdown level1 summary"><p>Replaces all diagnosers with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceDiagnosers(this ManualConfig config, params IDiagnoser[] newDiagnosers)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The config to be changed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Diagnosers.IDiagnoser.html">IDiagnoser</a>[]</td>
+        <td><span class="parametername">newDiagnosers</span></td>
+        <td><p>The new diagnosers to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>The existing <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L98">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceExporters_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceExporters*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceExporters_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Exporters_IExporter___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceExporters(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Exporters.IExporter[])">ReplaceExporters(IConfig, IExporter[])</h4>
+  <div class="markdown level1 summary"><p>Replaces all exporters with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceExporters(this IConfig config, params IExporter[] newExporters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.IConfig.html">IConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The source config.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Exporters.IExporter.html">IExporter</a>[]</td>
+        <td><span class="parametername">newExporters</span></td>
+        <td><p>The new exporters to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>A new instance of <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L90">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceExporters_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceExporters*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceExporters_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Exporters_IExporter___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceExporters(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Exporters.IExporter[])">ReplaceExporters(ManualConfig, IExporter[])</h4>
+  <div class="markdown level1 summary"><p>Replaces all exporters with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceExporters(this ManualConfig config, params IExporter[] newExporters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The config to be changed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Exporters.IExporter.html">IExporter</a>[]</td>
+        <td><span class="parametername">newExporters</span></td>
+        <td><p>The new exporters to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>The existing <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L191">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceFilters_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceFilters*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceFilters_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Filters_IFilter___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceFilters(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Filters.IFilter[])">ReplaceFilters(IConfig, IFilter[])</h4>
+  <div class="markdown level1 summary"><p>Replaces all filters with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceFilters(this IConfig config, params IFilter[] newFilters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.IConfig.html">IConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The source config.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Filters.IFilter.html">IFilter</a>[]</td>
+        <td><span class="parametername">newFilters</span></td>
+        <td><p>The new filters to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>A new instance of <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L183">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceFilters_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceFilters*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceFilters_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Filters_IFilter___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceFilters(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Filters.IFilter[])">ReplaceFilters(ManualConfig, IFilter[])</h4>
+  <div class="markdown level1 summary"><p>Replaces all filters with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceFilters(this ManualConfig config, params IFilter[] newFilters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The config to be changed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Filters.IFilter.html">IFilter</a>[]</td>
+        <td><span class="parametername">newFilters</span></td>
+        <td><p>The new filters to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>The existing <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L177">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceHardwareCounters_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceHardwareCounters*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceHardwareCounters_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Diagnosers_HardwareCounter___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceHardwareCounters(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Diagnosers.HardwareCounter[])">ReplaceHardwareCounters(IConfig, HardwareCounter[])</h4>
+  <div class="markdown level1 summary"><p>Replaces all hardware counters with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceHardwareCounters(this IConfig config, params HardwareCounter[] newHardwareCounters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.IConfig.html">IConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The source config.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Diagnosers.HardwareCounter.html">HardwareCounter</a>[]</td>
+        <td><span class="parametername">newHardwareCounters</span></td>
+        <td><p>The new hardware counters to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>A new instance of <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L168">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceHardwareCounters_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceHardwareCounters*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceHardwareCounters_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Diagnosers_HardwareCounter___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceHardwareCounters(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Diagnosers.HardwareCounter[])">ReplaceHardwareCounters(ManualConfig, HardwareCounter[])</h4>
+  <div class="markdown level1 summary"><p>Replaces all hardware counters with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceHardwareCounters(this ManualConfig config, params HardwareCounter[] newHardwareCounters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The config to be changed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Diagnosers.HardwareCounter.html">HardwareCounter</a>[]</td>
+        <td><span class="parametername">newHardwareCounters</span></td>
+        <td><p>The new hardware counters to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>The existing <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L150">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceJobs_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceJobs*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceJobs_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Jobs_Job___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceJobs(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Jobs.Job[])">ReplaceJobs(IConfig, Job[])</h4>
+  <div class="markdown level1 summary"><p>Replaces all jobs with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceJobs(this IConfig config, params Job[] newJobs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.IConfig.html">IConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The source config.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Jobs.Job.html">Job</a>[]</td>
+        <td><span class="parametername">newJobs</span></td>
+        <td><p>The new jobs to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>A new instance of <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L142">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceJobs_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceJobs*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceJobs_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Jobs_Job___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceJobs(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Jobs.Job[])">ReplaceJobs(ManualConfig, Job[])</h4>
+  <div class="markdown level1 summary"><p>Replaces all jobs with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceJobs(this ManualConfig config, params Job[] newJobs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The config to be changed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Jobs.Job.html">Job</a>[]</td>
+        <td><span class="parametername">newJobs</span></td>
+        <td><p>The new jobs to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>The existing <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L111">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceLoggers_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLoggers*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceLoggers_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Loggers_ILogger___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLoggers(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Loggers.ILogger[])">ReplaceLoggers(IConfig, ILogger[])</h4>
+  <div class="markdown level1 summary"><p>Replaces all loggers with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceLoggers(this IConfig config, params ILogger[] newLoggers)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.IConfig.html">IConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The source config.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Loggers.ILogger.html">ILogger</a>[]</td>
+        <td><span class="parametername">newLoggers</span></td>
+        <td><p>The new loggers to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>A new instance of <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L103">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceLoggers_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLoggers*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceLoggers_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Loggers_ILogger___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLoggers(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Loggers.ILogger[])">ReplaceLoggers(ManualConfig, ILogger[])</h4>
+  <div class="markdown level1 summary"><p>Replaces all loggers with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceLoggers(this ManualConfig config, params ILogger[] newLoggers)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The config to be changed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Loggers.ILogger.html">ILogger</a>[]</td>
+        <td><span class="parametername">newLoggers</span></td>
+        <td><p>The new loggers to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>The existing <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L205">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceLogicalGroupRules_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLogicalGroupRules*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceLogicalGroupRules_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Configs_BenchmarkLogicalGroupRule___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLogicalGroupRules(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Configs.BenchmarkLogicalGroupRule[])">ReplaceLogicalGroupRules(IConfig, BenchmarkLogicalGroupRule[])</h4>
+  <div class="markdown level1 summary"><p>Replaces all logical group rules with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceLogicalGroupRules(this IConfig config, params BenchmarkLogicalGroupRule[] newLogicalGroupRules)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.IConfig.html">IConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The source config.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.BenchmarkLogicalGroupRule.html">BenchmarkLogicalGroupRule</a>[]</td>
+        <td><span class="parametername">newLogicalGroupRules</span></td>
+        <td><p>The new logical group rules to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>A new instance of <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L196">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceLogicalGroupRules_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLogicalGroupRules*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceLogicalGroupRules_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Configs_BenchmarkLogicalGroupRule___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLogicalGroupRules(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Configs.BenchmarkLogicalGroupRule[])">ReplaceLogicalGroupRules(ManualConfig, BenchmarkLogicalGroupRule[])</h4>
+  <div class="markdown level1 summary"><p>Replaces all logical group rules with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceLogicalGroupRules(this ManualConfig config, params BenchmarkLogicalGroupRule[] newLogicalGroupRules)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The config to be changed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.BenchmarkLogicalGroupRule.html">BenchmarkLogicalGroupRule</a>[]</td>
+        <td><span class="parametername">newLogicalGroupRules</span></td>
+        <td><p>The new logical group rules to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>The existing <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L163">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceValidators_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceValidators*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceValidators_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Validators_IValidator___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceValidators(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Validators.IValidator[])">ReplaceValidators(IConfig, IValidator[])</h4>
+  <div class="markdown level1 summary"><p>Replaces all validators with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceValidators(this IConfig config, params IValidator[] newValidators)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.IConfig.html">IConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The source config.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Validators.IValidator.html">IValidator</a>[]</td>
+        <td><span class="parametername">newValidators</span></td>
+        <td><p>The new validators to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>A new instance of <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L155">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceValidators_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceValidators*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceValidators_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Validators_IValidator___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceValidators(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Validators.IValidator[])">ReplaceValidators(ManualConfig, IValidator[])</h4>
+  <div class="markdown level1 summary"><p>Replaces all validators with the given new ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualConfig ReplaceValidators(this ManualConfig config, params IValidator[] newValidators)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The config to be changed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Validators.IValidator.html">IValidator</a>[]</td>
+        <td><span class="parametername">newValidators</span></td>
+        <td><p>The new validators to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a></td>
+        <td><p>The existing <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html">ManualConfig</a> with changes applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><span><a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/tree/master/samples">Config Extension Samples and Column Display Samples on GitHub</a></span></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/ConfigExtensions.cs/#L23" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2021-2022 Matthias Wolf, Mawosoft
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

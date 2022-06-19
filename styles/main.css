@@ -1,0 +1,122 @@
+/*
+    https://github.com/highlightjs/highlight.js/blob/main/src/styles/vs.css
+    Visual Studio-like style based on original C# coloring by Jason Diamond <jason@diamond.name>
+*/
+
+.hljs {
+    background: inherit; /*white;*/
+    color: #333;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-variable {
+    color: #008000;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in,
+.hljs-name,
+.hljs-tag {
+    color: #00f;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-section,
+.hljs-attribute,
+.hljs-literal,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-addition {
+    color: #a31515;
+}
+
+.hljs-deletion,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-meta {
+    color: #2b91af;
+}
+
+.hljs-doctag {
+    color: #808080;
+}
+
+.hljs-attr {
+    color: #f00;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+    color: #00b0e8;
+}
+
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-strong {
+    font-weight: bold;
+}
+
+/*********************************************************************/
+
+pre {
+    word-break: normal;
+    word-wrap: normal;
+    white-space: pre;
+}
+
+/* Code snippets */
+pre > code {
+    white-space: pre;
+}
+
+/* Syntax/declaration code snippets */
+.codewrapper > pre > code {
+    white-space: pre-wrap;
+}
+
+/*
+    docfx.css has word-break/wrap: break-word which causes arbitrary breaks in xref'd type names
+    (e.g. strin|g) in the parameter table.
+    Since docfx.js inserts <wbr> into long words at certain points, this is not necessary.
+*/
+.text-break {
+    word-break: normal;
+    word-wrap: normal;
+}
+
+/*
+    docfx.vendor.css has summary { display: block; }
+*/
+summary {
+    display: list-item;
+    cursor: pointer;
+}
+
+/*********************************************************************/
+
+/*
+    docfx.css has svg:hover path { fill: #ffffff; }
+*/
+svg.homePageBtn:hover path {
+    fill: currentColor;
+}
+
+a.homePageBtn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: inherit;
+    border-radius: 4px;
+}
+
+a.homePageBtn:hover {
+    background-color: #333;
+    color: #fff;
+}

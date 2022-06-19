@@ -1,0 +1,798 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BenchmarkRunInfos
+   | Mawosoft Extensions for BenchmarkDotNet </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BenchmarkRunInfos
+   | Mawosoft Extensions for BenchmarkDotNet ">
+    <meta name="generator" content="docfx 2.59.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos">
+  
+  
+  <h1 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos" class="text-break">Class BenchmarkRunInfos
+  </h1>
+  <div class="markdown level0 summary"><p>A wrapper and extension for <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkConverter.html">BenchmarkConverter</a>, collecting the converted benchmarks,
+executing them, and optionally overriding any global and local <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Jobs.Job.html">Job</a> configurations.</p>
+</div>
+  <div class="markdown level0 conceptual"><p>As a minor benefit, <code>BenchmarkRunInfos</code> simplifies the use of <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkConverter.html">BenchmarkConverter</a>:</p>
+<ul>
+<li>You can store the global config to use in the <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Config">Config</a>
+property instead of passing it as an argument in each call to a conversion method.</li>
+<li>The results of all conversions are automatically collected and by calling <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_RunAll">RunAll()</a>
+afterwards, you can execute them.</li>
+<li><code>BenchmarkRunInfos</code> also provides two additional conversion methods for converting an entire <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a>
+and for converting methods by their name instead of their <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a>.</li>
+</ul>
+<p>However, the main purpose of <code>BenchmarkRunInfos</code> is the support of debugging scenarios:</p>
+<ul>
+<li>Specifying an <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_OverrideJob">OverrideJob</a> will override <em>all</em>
+<a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Jobs.Job.html">Job</a> configurations, regardless whether they are defined globally or locally,
+as an explit, default or mutator job, via custom config or via attribute annotation.</li>
+<li>Even if your config contains multiple jobs or you have annotated your benchmark classes with multiple jobs
+(e.g. via <code>[DryJob, ShortRunJob]</code> or similar attributes), each converted benchmark method will only be
+executed with the override job.</li>
+<li>To achieve that, you don&#39;t have to change the coding of your configurations, just add a few extra statements
+to your <code>Main</code> method that will get executed under certain conditions.</li>
+</ul>
+<div class="NOTE"><h5>Note</h5><p>It may seem that instead of using <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html">BenchmarkRunInfos</a> and
+<a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_OverrideJob">OverrideJob</a> in a debugging scenario,
+you could just create a different global config and set its <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ManualConfig.html#BenchmarkDotNet_Configs_ManualConfig_UnionRule">UnionRule</a>
+property to <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.ConfigUnionRule.html#BenchmarkDotNet_Configs_ConfigUnionRule_AlwaysUseGlobal">ConfigUnionRule.AlwaysUseGlobal</a>.</p>
+<p>That however will have <strong>no effect at all</strong>, because BenchmarkDotNet always takes the UnionRule from the local config.</p>
+</div>
+</div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">BenchmarkRunInfos</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.html">Mawosoft.Extensions.BenchmarkDotNet</a></h6>
+  <h6><strong>Assembly</strong>: Mawosoft.Extensions.BenchmarkDotNet.dll</h6>
+  <h5 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class BenchmarkRunInfos</code></pre>
+  </div>
+  <h5 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_examples"><strong>Examples</strong></h5>
+  <pre><code class="lang-csharp">public static void Main(string[] args)
+{
+    // Your customized global config (Default used here for simplicity)
+    ManualConfig config = ManualConfig.Create(DefaultConfig.Instance);
+    if (Debugger.IsAttached &amp;&amp; args.Length == 0)
+    {
+        // Debugging scenario
+        BenchmarkRunInfos runInfos = new();
+        runInfos.Config = config
+            .WithOption(ConfigOptions.DisableOptimizationsValidator, true);
+        runInfos.OverrideJob = BenchmarkRunInfos.FastInProcessJob;
+        // Pick only the methods you want to debug
+        runInfos.ConvertMethodsToBenchmarks(typeof(MyClass1), &quot;Method1&quot;, &quot;Method2&quot;);
+        runInfos.ConvertMethodsToBenchmarks(typeof(MyClass2), &quot;Method3&quot;);
+        runInfos.RunAll();
+    }
+    else
+    {
+        // Regular scenario
+        BenchmarkRunner.Run(typeof(Program).Assembly, config, args);
+    }
+}
+</code></pre>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L84">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos__ctor_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.#ctor*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos__ctor" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.#ctor">BenchmarkRunInfos()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html">BenchmarkRunInfos</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BenchmarkRunInfos()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L90">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos__ctor_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.#ctor*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos__ctor_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Jobs_Job_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.#ctor(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Jobs.Job)">BenchmarkRunInfos(IConfig, Job)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html">BenchmarkRunInfos</a> class with an optional global
+config and an optional override job.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BenchmarkRunInfos(IConfig globalConfig, Job overrideJob)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.IConfig.html">IConfig</a></td>
+        <td><span class="parametername">globalConfig</span></td>
+        <td><p>The global config to use for conversions, or <code>null</code> to use BenchmarkDotNet&#39;s default config.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Jobs.Job.html">Job</a></td>
+        <td><span class="parametername">overrideJob</span></td>
+        <td><p>The override job to use, or <code>null</code> to not use an override job at all.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos__ctor_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Jobs_Job__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>You can change the <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Config">Config</a> and <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_OverrideJob">OverrideJob</a>
+properties at any time. This will not affect any benchmarks already converted, only subsequent benchmark conversions.</p>
+<p>The predefined <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_FastInProcessJob">FastInProcessJob</a> is the best choice for debugging,
+but you can also define your own job if you prefer.</p>
+</div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L26">View Source</a>
+  </span>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_FastInProcessJob" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.FastInProcessJob">FastInProcessJob</h4>
+  <div class="markdown level1 summary"><p>A predefined Job instance that can be used as override job.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Job FastInProcessJob</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Jobs.Job.html">Job</a></td>
+        <td><p>The predefined Job instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_FastInProcessJob_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><code>FastInProcessJob</code> is equivalent to <code>Job.Dry.WithToolchain(InProcessEmitToolchain.Instance)</code>.</p>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L34">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Config_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Config*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Config" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Config">Config</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the global config to use for subsequent benchmark conversions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IConfig Config { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Configs.IConfig.html">IConfig</a></td>
+        <td><p>The global config to use for conversions, or <code>null</code> to use BenchmarkDotNet&#39;s default config.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Config_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>You can change the <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Config">Config</a>
+property at any time. This will not affect any benchmarks already converted, only subsequent benchmark conversions.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L49">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Count_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Count*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Count" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Count">Count</h4>
+  <div class="markdown level1 summary"><p>Gets the number of converted <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkRunInfo.html">BenchmarkRunInfo</a> elements.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><p>The number of converted benchmarks.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L54">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Item_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Item*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Item_System_Int32_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Item(System.Int32)">Item[Int32]</h4>
+  <div class="markdown level1 summary"><p>Gets the converted <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkRunInfo.html">BenchmarkRunInfo</a> element at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BenchmarkRunInfo this[int index] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The zero-based index of the element to get.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkRunInfo.html">BenchmarkRunInfo</a></td>
+        <td><p>The element at the specified index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L44">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Items_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Items*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Items" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Items">Items</h4>
+  <div class="markdown level1 summary"><p>Gets a read-only collection of the converted benchmarks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;BenchmarkRunInfo&gt; Items { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkRunInfo.html">BenchmarkRunInfo</a>&gt;</td>
+        <td><p>The read-only collection of the converted benchmarks.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L39">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_OverrideJob_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.OverrideJob*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_OverrideJob" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.OverrideJob">OverrideJob</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the override job to use for subsequent benchmark conversions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Job OverrideJob { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Jobs.Job.html">Job</a></td>
+        <td><p>The override job to use, or <code>null</code> to not use an override job at all.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_OverrideJob_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>You can change the <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_OverrideJob">OverrideJob</a>
+property at any time. This will not affect any benchmarks already converted, only subsequent benchmark conversions.</p>
+<p>The predefined <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_FastInProcessJob">FastInProcessJob</a> is the best choice for debugging,
+but you can also define your own job if you prefer.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L60">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Add_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Add*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Add_BenchmarkDotNet_Running_BenchmarkRunInfo_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Add(BenchmarkDotNet.Running.BenchmarkRunInfo)">Add(BenchmarkRunInfo)</h4>
+  <div class="markdown level1 summary"><p>Adds a <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkRunInfo.html">BenchmarkRunInfo</a> element and applies the <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_OverrideJob">OverrideJob</a>
+if one is specified.</p>
+</div>
+  <div class="markdown level1 conceptual"><div class="NOTE"><h5>Note</h5><p>Since <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkRunInfo.html">BenchmarkRunInfo</a> already contains converted benchmarks, an eventual
+<a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Config">Config</a> will not be applied.</p>
+</div>
+</div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(BenchmarkRunInfo benchmarkRunInfo)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkRunInfo.html">BenchmarkRunInfo</a></td>
+        <td><span class="parametername">benchmarkRunInfo</span></td>
+        <td><p>The <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkRunInfo.html">BenchmarkRunInfo</a> element to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L66">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_AddRange_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.AddRange*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_AddRange_System_Collections_Generic_IEnumerable_BenchmarkDotNet_Running_BenchmarkRunInfo__" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.AddRange(System.Collections.Generic.IEnumerable{BenchmarkDotNet.Running.BenchmarkRunInfo})">AddRange(IEnumerable&lt;BenchmarkRunInfo&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds a collection of <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkRunInfo.html">BenchmarkRunInfo</a> elements and applies the <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_OverrideJob">OverrideJob</a>
+if one is specified.</p>
+</div>
+  <div class="markdown level1 conceptual"><div class="NOTE"><h5>Note</h5><p>Since <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkRunInfo.html">BenchmarkRunInfo</a> already contains converted benchmarks, an eventual
+<a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Config">Config</a> will not be applied.</p>
+</div>
+</div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddRange(IEnumerable&lt;BenchmarkRunInfo&gt; benchmarkRunInfos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkRunInfo.html">BenchmarkRunInfo</a>&gt;</td>
+        <td><span class="parametername">benchmarkRunInfos</span></td>
+        <td><p>The collection of <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkRunInfo.html">BenchmarkRunInfo</a> elements to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L72">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Clear_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Clear*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Clear_System_Boolean_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Clear(System.Boolean)">Clear(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Clears the list of <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkRunInfo.html">BenchmarkRunInfo</a> elements and optionally disposes them.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear(bool dispose)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">dispose</span></td>
+        <td><p><code>true</code> to dispose all benchmarks, <code>false</code> to only remove them from the list without disposal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L106">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertAssemblyToBenchmarks_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertAssemblyToBenchmarks*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertAssemblyToBenchmarks_System_Reflection_Assembly_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertAssemblyToBenchmarks(System.Reflection.Assembly)">ConvertAssemblyToBenchmarks(Assembly)</h4>
+  <div class="markdown level1 summary"><p>Converts all types with benchmarks in the given assembly and stores the results.</p>
+</div>
+  <div class="markdown level1 conceptual"><p>An eventual <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Config">Config</a> and
+<a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_OverrideJob">OverrideJob</a> will be applied.</p>
+</div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ConvertAssemblyToBenchmarks(Assembly assembly)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a></td>
+        <td><span class="parametername">assembly</span></td>
+        <td><p>The assembly containing the benchmark classes and methods.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L136">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertMethodsToBenchmarks_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertMethodsToBenchmarks*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertMethodsToBenchmarks_System_Type_System_Reflection_MethodInfo___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertMethodsToBenchmarks(System.Type,System.Reflection.MethodInfo[])">ConvertMethodsToBenchmarks(Type, MethodInfo[])</h4>
+  <div class="markdown level1 summary"><p>Converts the specified benchmark methods of the given type and stores the results.</p>
+</div>
+  <div class="markdown level1 conceptual"><p>An eventual <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Config">Config</a> and
+<a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_OverrideJob">OverrideJob</a> will be applied.</p>
+</div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ConvertMethodsToBenchmarks(Type containingType, params MethodInfo[] benchmarkMethods)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">containingType</span></td>
+        <td><p>The <code>Type</code> of the class containing the benchmark methods.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a>[]</td>
+        <td><span class="parametername">benchmarkMethods</span></td>
+        <td><p>An array of <code>MethodInfo</code> objects describing the benchmark methods.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L123">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertMethodsToBenchmarks_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertMethodsToBenchmarks*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertMethodsToBenchmarks_System_Type_System_String___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertMethodsToBenchmarks(System.Type,System.String[])">ConvertMethodsToBenchmarks(Type, String[])</h4>
+  <div class="markdown level1 summary"><p>Converts the named benchmark methods of the given type and stores the results.</p>
+</div>
+  <div class="markdown level1 conceptual"><p>An eventual <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Config">Config</a> and
+<a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_OverrideJob">OverrideJob</a> will be applied.</p>
+<div class="NOTE"><h5>Note</h5><p>The method names must be unambigious, otherwise the conversion will fail.</p>
+</div>
+</div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ConvertMethodsToBenchmarks(Type containingType, params string[] benchmarkMethodNames)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">containingType</span></td>
+        <td><p>The <code>Type</code> of the class containing the benchmark methods.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>[]</td>
+        <td><span class="parametername">benchmarkMethodNames</span></td>
+        <td><p>An array of strings containing the names of the benchmark methods.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L143">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertSourceToBenchmarks_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertSourceToBenchmarks*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertSourceToBenchmarks_System_String_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertSourceToBenchmarks(System.String)">ConvertSourceToBenchmarks(String)</h4>
+  <div class="markdown level1 summary"><p>Compiles the given C# source code, converts the contained benchmark methods, and stores the results.</p>
+</div>
+  <div class="markdown level1 conceptual"><p>An eventual <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Config">Config</a> and
+<a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_OverrideJob">OverrideJob</a> will be applied.</p>
+</div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ConvertSourceToBenchmarks(string source)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>A string containing the C# source code to compile.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L149">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertTypeToBenchmarks_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertTypeToBenchmarks*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertTypeToBenchmarks_System_Type_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertTypeToBenchmarks(System.Type)">ConvertTypeToBenchmarks(Type)</h4>
+  <div class="markdown level1 summary"><p>Converts all benchmark methods of the given type and stores the results.</p>
+</div>
+  <div class="markdown level1 conceptual"><p>An eventual <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Config">Config</a> and
+<a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_OverrideJob">OverrideJob</a> will be applied.</p>
+</div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ConvertTypeToBenchmarks(Type type)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>The <code>Type</code> of the class containing the benchmark methods.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L156">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertUrlToBenchmarks_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertUrlToBenchmarks*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertUrlToBenchmarks_System_String_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertUrlToBenchmarks(System.String)">ConvertUrlToBenchmarks(String)</h4>
+  <div class="markdown level1 summary"><p>Reads and compiles C# source code from the given Url, converts the contained benchmark methods,
+and stores the results.</p>
+</div>
+  <div class="markdown level1 conceptual"><p>An eventual <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Config">Config</a> and
+<a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_OverrideJob">OverrideJob</a> will be applied.</p>
+</div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ConvertUrlToBenchmarks(string url)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">url</span></td>
+        <td><p>A string containing the Url to read the C# source code from.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L100">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_DebugUseDefaultOverrideJob_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.DebugUseDefaultOverrideJob*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_DebugUseDefaultOverrideJob" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.DebugUseDefaultOverrideJob">DebugUseDefaultOverrideJob()</h4>
+  <div class="markdown level1 summary"><p>Sets the predefined override job (<a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_FastInProcessJob">FastInProcessJob</a>) when called from code compiled
+with the conditional <code>DEBUG</code> symbol defined.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Conditional(&quot;DEBUG&quot;)]
+public void DebugUseDefaultOverrideJob()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L162">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_RunAll_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.RunAll*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_RunAll" data-uid="Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.RunAll">RunAll()</h4>
+  <div class="markdown level1 summary"><p>Runs all converted benchmarks and returns the results.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Summary[] RunAll()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Reports.Summary.html">Summary</a>[]</td>
+        <td><p>An array of <code>Summary</code> objects containing the benchmark results.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><span><a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/tree/master/samples">BenchmarkRunInfos Sample on GitHub</a></span></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/BenchmarkRunInfos.cs/#L21" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2021-2022 Matthias Wolf, Mawosoft
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

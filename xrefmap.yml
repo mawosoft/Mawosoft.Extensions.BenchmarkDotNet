@@ -1,0 +1,973 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: Mawosoft.Extensions.BenchmarkDotNet
+  name: Mawosoft.Extensions.BenchmarkDotNet
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.html
+  commentId: N:Mawosoft.Extensions.BenchmarkDotNet
+  fullName: Mawosoft.Extensions.BenchmarkDotNet
+  nameWithType: Mawosoft.Extensions.BenchmarkDotNet
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos
+  name: BenchmarkRunInfos
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html
+  commentId: T:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos
+  nameWithType: BenchmarkRunInfos
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.#ctor
+  name: BenchmarkRunInfos()
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos__ctor
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.#ctor
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.BenchmarkRunInfos()
+  nameWithType: BenchmarkRunInfos.BenchmarkRunInfos()
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.#ctor(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Jobs.Job)
+  name: BenchmarkRunInfos(IConfig, Job)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos__ctor_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Jobs_Job_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.#ctor(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Jobs.Job)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.BenchmarkRunInfos(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Jobs.Job)
+  nameWithType: BenchmarkRunInfos.BenchmarkRunInfos(IConfig, Job)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.#ctor*
+  name: BenchmarkRunInfos
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos__ctor_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.#ctor
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.BenchmarkRunInfos
+  nameWithType: BenchmarkRunInfos.BenchmarkRunInfos
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Add(BenchmarkDotNet.Running.BenchmarkRunInfo)
+  name: Add(BenchmarkRunInfo)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Add_BenchmarkDotNet_Running_BenchmarkRunInfo_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Add(BenchmarkDotNet.Running.BenchmarkRunInfo)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Add(BenchmarkDotNet.Running.BenchmarkRunInfo)
+  nameWithType: BenchmarkRunInfos.Add(BenchmarkRunInfo)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Add*
+  name: Add
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Add_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Add
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Add
+  nameWithType: BenchmarkRunInfos.Add
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.AddRange(System.Collections.Generic.IEnumerable{BenchmarkDotNet.Running.BenchmarkRunInfo})
+  name: AddRange(IEnumerable<BenchmarkRunInfo>)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_AddRange_System_Collections_Generic_IEnumerable_BenchmarkDotNet_Running_BenchmarkRunInfo__
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.AddRange(System.Collections.Generic.IEnumerable{BenchmarkDotNet.Running.BenchmarkRunInfo})
+  name.vb: AddRange(IEnumerable(Of BenchmarkRunInfo))
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.AddRange(System.Collections.Generic.IEnumerable<BenchmarkDotNet.Running.BenchmarkRunInfo>)
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.AddRange(System.Collections.Generic.IEnumerable(Of BenchmarkDotNet.Running.BenchmarkRunInfo))
+  nameWithType: BenchmarkRunInfos.AddRange(IEnumerable<BenchmarkRunInfo>)
+  nameWithType.vb: BenchmarkRunInfos.AddRange(IEnumerable(Of BenchmarkRunInfo))
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.AddRange*
+  name: AddRange
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_AddRange_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.AddRange
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.AddRange
+  nameWithType: BenchmarkRunInfos.AddRange
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Clear(System.Boolean)
+  name: Clear(Boolean)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Clear_System_Boolean_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Clear(System.Boolean)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Clear(System.Boolean)
+  nameWithType: BenchmarkRunInfos.Clear(Boolean)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Clear*
+  name: Clear
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Clear_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Clear
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Clear
+  nameWithType: BenchmarkRunInfos.Clear
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Config
+  name: Config
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Config
+  commentId: P:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Config
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Config
+  nameWithType: BenchmarkRunInfos.Config
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Config*
+  name: Config
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Config_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Config
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Config
+  nameWithType: BenchmarkRunInfos.Config
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertAssemblyToBenchmarks(System.Reflection.Assembly)
+  name: ConvertAssemblyToBenchmarks(Assembly)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertAssemblyToBenchmarks_System_Reflection_Assembly_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertAssemblyToBenchmarks(System.Reflection.Assembly)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertAssemblyToBenchmarks(System.Reflection.Assembly)
+  nameWithType: BenchmarkRunInfos.ConvertAssemblyToBenchmarks(Assembly)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertAssemblyToBenchmarks*
+  name: ConvertAssemblyToBenchmarks
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertAssemblyToBenchmarks_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertAssemblyToBenchmarks
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertAssemblyToBenchmarks
+  nameWithType: BenchmarkRunInfos.ConvertAssemblyToBenchmarks
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertMethodsToBenchmarks(System.Type,System.Reflection.MethodInfo[])
+  name: ConvertMethodsToBenchmarks(Type, MethodInfo[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertMethodsToBenchmarks_System_Type_System_Reflection_MethodInfo___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertMethodsToBenchmarks(System.Type,System.Reflection.MethodInfo[])
+  name.vb: ConvertMethodsToBenchmarks(Type, MethodInfo())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertMethodsToBenchmarks(System.Type, System.Reflection.MethodInfo[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertMethodsToBenchmarks(System.Type, System.Reflection.MethodInfo())
+  nameWithType: BenchmarkRunInfos.ConvertMethodsToBenchmarks(Type, MethodInfo[])
+  nameWithType.vb: BenchmarkRunInfos.ConvertMethodsToBenchmarks(Type, MethodInfo())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertMethodsToBenchmarks(System.Type,System.String[])
+  name: ConvertMethodsToBenchmarks(Type, String[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertMethodsToBenchmarks_System_Type_System_String___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertMethodsToBenchmarks(System.Type,System.String[])
+  name.vb: ConvertMethodsToBenchmarks(Type, String())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertMethodsToBenchmarks(System.Type, System.String[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertMethodsToBenchmarks(System.Type, System.String())
+  nameWithType: BenchmarkRunInfos.ConvertMethodsToBenchmarks(Type, String[])
+  nameWithType.vb: BenchmarkRunInfos.ConvertMethodsToBenchmarks(Type, String())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertMethodsToBenchmarks*
+  name: ConvertMethodsToBenchmarks
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertMethodsToBenchmarks_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertMethodsToBenchmarks
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertMethodsToBenchmarks
+  nameWithType: BenchmarkRunInfos.ConvertMethodsToBenchmarks
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertSourceToBenchmarks(System.String)
+  name: ConvertSourceToBenchmarks(String)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertSourceToBenchmarks_System_String_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertSourceToBenchmarks(System.String)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertSourceToBenchmarks(System.String)
+  nameWithType: BenchmarkRunInfos.ConvertSourceToBenchmarks(String)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertSourceToBenchmarks*
+  name: ConvertSourceToBenchmarks
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertSourceToBenchmarks_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertSourceToBenchmarks
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertSourceToBenchmarks
+  nameWithType: BenchmarkRunInfos.ConvertSourceToBenchmarks
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertTypeToBenchmarks(System.Type)
+  name: ConvertTypeToBenchmarks(Type)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertTypeToBenchmarks_System_Type_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertTypeToBenchmarks(System.Type)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertTypeToBenchmarks(System.Type)
+  nameWithType: BenchmarkRunInfos.ConvertTypeToBenchmarks(Type)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertTypeToBenchmarks*
+  name: ConvertTypeToBenchmarks
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertTypeToBenchmarks_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertTypeToBenchmarks
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertTypeToBenchmarks
+  nameWithType: BenchmarkRunInfos.ConvertTypeToBenchmarks
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertUrlToBenchmarks(System.String)
+  name: ConvertUrlToBenchmarks(String)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertUrlToBenchmarks_System_String_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertUrlToBenchmarks(System.String)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertUrlToBenchmarks(System.String)
+  nameWithType: BenchmarkRunInfos.ConvertUrlToBenchmarks(String)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertUrlToBenchmarks*
+  name: ConvertUrlToBenchmarks
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_ConvertUrlToBenchmarks_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertUrlToBenchmarks
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.ConvertUrlToBenchmarks
+  nameWithType: BenchmarkRunInfos.ConvertUrlToBenchmarks
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Count
+  name: Count
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Count
+  commentId: P:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Count
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Count
+  nameWithType: BenchmarkRunInfos.Count
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Count*
+  name: Count
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Count_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Count
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Count
+  nameWithType: BenchmarkRunInfos.Count
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.DebugUseDefaultOverrideJob
+  name: DebugUseDefaultOverrideJob()
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_DebugUseDefaultOverrideJob
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.DebugUseDefaultOverrideJob
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.DebugUseDefaultOverrideJob()
+  nameWithType: BenchmarkRunInfos.DebugUseDefaultOverrideJob()
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.DebugUseDefaultOverrideJob*
+  name: DebugUseDefaultOverrideJob
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_DebugUseDefaultOverrideJob_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.DebugUseDefaultOverrideJob
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.DebugUseDefaultOverrideJob
+  nameWithType: BenchmarkRunInfos.DebugUseDefaultOverrideJob
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.FastInProcessJob
+  name: FastInProcessJob
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_FastInProcessJob
+  commentId: F:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.FastInProcessJob
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.FastInProcessJob
+  nameWithType: BenchmarkRunInfos.FastInProcessJob
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Item(System.Int32)
+  name: Item[Int32]
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Item_System_Int32_
+  commentId: P:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Item(System.Int32)
+  name.vb: Item(Int32)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Item[System.Int32]
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Item(System.Int32)
+  nameWithType: BenchmarkRunInfos.Item[Int32]
+  nameWithType.vb: BenchmarkRunInfos.Item(Int32)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Item*
+  name: Item
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Item_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Item
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Item
+  nameWithType: BenchmarkRunInfos.Item
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Items
+  name: Items
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Items
+  commentId: P:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Items
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Items
+  nameWithType: BenchmarkRunInfos.Items
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Items*
+  name: Items
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_Items_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Items
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.Items
+  nameWithType: BenchmarkRunInfos.Items
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.OverrideJob
+  name: OverrideJob
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_OverrideJob
+  commentId: P:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.OverrideJob
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.OverrideJob
+  nameWithType: BenchmarkRunInfos.OverrideJob
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.OverrideJob*
+  name: OverrideJob
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_OverrideJob_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.OverrideJob
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.OverrideJob
+  nameWithType: BenchmarkRunInfos.OverrideJob
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.RunAll
+  name: RunAll()
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_RunAll
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.RunAll
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.RunAll()
+  nameWithType: BenchmarkRunInfos.RunAll()
+- uid: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.RunAll*
+  name: RunAll
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html#Mawosoft_Extensions_BenchmarkDotNet_BenchmarkRunInfos_RunAll_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.RunAll
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.RunAll
+  nameWithType: BenchmarkRunInfos.RunAll
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn
+  name: CombinedParamsColumn
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html
+  commentId: T:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn
+  nameWithType: CombinedParamsColumn
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.#ctor(System.String,System.String,System.String,System.String)
+  name: CombinedParamsColumn(String, String, String, String)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn__ctor_System_String_System_String_System_String_System_String_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.#ctor(System.String,System.String,System.String,System.String)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.CombinedParamsColumn(System.String, System.String, System.String, System.String)
+  nameWithType: CombinedParamsColumn.CombinedParamsColumn(String, String, String, String)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.#ctor*
+  name: CombinedParamsColumn
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn__ctor_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.#ctor
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.CombinedParamsColumn
+  nameWithType: CombinedParamsColumn.CombinedParamsColumn
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.AlwaysShow
+  name: AlwaysShow
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_AlwaysShow
+  commentId: P:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.AlwaysShow
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.AlwaysShow
+  nameWithType: CombinedParamsColumn.AlwaysShow
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.AlwaysShow*
+  name: AlwaysShow
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_AlwaysShow_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.AlwaysShow
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.AlwaysShow
+  nameWithType: CombinedParamsColumn.AlwaysShow
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.Category
+  name: Category
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_Category
+  commentId: P:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.Category
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.Category
+  nameWithType: CombinedParamsColumn.Category
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.Category*
+  name: Category
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_Category_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.Category
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.Category
+  nameWithType: CombinedParamsColumn.Category
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.ColumnName
+  name: ColumnName
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_ColumnName
+  commentId: P:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.ColumnName
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.ColumnName
+  nameWithType: CombinedParamsColumn.ColumnName
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.ColumnName*
+  name: ColumnName
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_ColumnName_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.ColumnName
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.ColumnName
+  nameWithType: CombinedParamsColumn.ColumnName
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.GetValue(BenchmarkDotNet.Reports.Summary,BenchmarkDotNet.Running.BenchmarkCase)
+  name: GetValue(Summary, BenchmarkCase)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_GetValue_BenchmarkDotNet_Reports_Summary_BenchmarkDotNet_Running_BenchmarkCase_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.GetValue(BenchmarkDotNet.Reports.Summary,BenchmarkDotNet.Running.BenchmarkCase)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.GetValue(BenchmarkDotNet.Reports.Summary, BenchmarkDotNet.Running.BenchmarkCase)
+  nameWithType: CombinedParamsColumn.GetValue(Summary, BenchmarkCase)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.GetValue(BenchmarkDotNet.Reports.Summary,BenchmarkDotNet.Running.BenchmarkCase,BenchmarkDotNet.Reports.SummaryStyle)
+  name: GetValue(Summary, BenchmarkCase, SummaryStyle)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_GetValue_BenchmarkDotNet_Reports_Summary_BenchmarkDotNet_Running_BenchmarkCase_BenchmarkDotNet_Reports_SummaryStyle_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.GetValue(BenchmarkDotNet.Reports.Summary,BenchmarkDotNet.Running.BenchmarkCase,BenchmarkDotNet.Reports.SummaryStyle)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.GetValue(BenchmarkDotNet.Reports.Summary, BenchmarkDotNet.Running.BenchmarkCase, BenchmarkDotNet.Reports.SummaryStyle)
+  nameWithType: CombinedParamsColumn.GetValue(Summary, BenchmarkCase, SummaryStyle)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.GetValue*
+  name: GetValue
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_GetValue_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.GetValue
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.GetValue
+  nameWithType: CombinedParamsColumn.GetValue
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.Id
+  name: Id
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_Id
+  commentId: P:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.Id
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.Id
+  nameWithType: CombinedParamsColumn.Id
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.Id*
+  name: Id
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_Id_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.Id
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.Id
+  nameWithType: CombinedParamsColumn.Id
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.IsAvailable(BenchmarkDotNet.Reports.Summary)
+  name: IsAvailable(Summary)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_IsAvailable_BenchmarkDotNet_Reports_Summary_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.IsAvailable(BenchmarkDotNet.Reports.Summary)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.IsAvailable(BenchmarkDotNet.Reports.Summary)
+  nameWithType: CombinedParamsColumn.IsAvailable(Summary)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.IsAvailable*
+  name: IsAvailable
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_IsAvailable_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.IsAvailable
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.IsAvailable
+  nameWithType: CombinedParamsColumn.IsAvailable
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.IsDefault(BenchmarkDotNet.Reports.Summary,BenchmarkDotNet.Running.BenchmarkCase)
+  name: IsDefault(Summary, BenchmarkCase)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_IsDefault_BenchmarkDotNet_Reports_Summary_BenchmarkDotNet_Running_BenchmarkCase_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.IsDefault(BenchmarkDotNet.Reports.Summary,BenchmarkDotNet.Running.BenchmarkCase)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.IsDefault(BenchmarkDotNet.Reports.Summary, BenchmarkDotNet.Running.BenchmarkCase)
+  nameWithType: CombinedParamsColumn.IsDefault(Summary, BenchmarkCase)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.IsDefault*
+  name: IsDefault
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_IsDefault_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.IsDefault
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.IsDefault
+  nameWithType: CombinedParamsColumn.IsDefault
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.IsNumeric
+  name: IsNumeric
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_IsNumeric
+  commentId: P:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.IsNumeric
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.IsNumeric
+  nameWithType: CombinedParamsColumn.IsNumeric
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.IsNumeric*
+  name: IsNumeric
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_IsNumeric_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.IsNumeric
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.IsNumeric
+  nameWithType: CombinedParamsColumn.IsNumeric
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.Legend
+  name: Legend
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_Legend
+  commentId: P:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.Legend
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.Legend
+  nameWithType: CombinedParamsColumn.Legend
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.Legend*
+  name: Legend
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_Legend_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.Legend
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.Legend
+  nameWithType: CombinedParamsColumn.Legend
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.PriorityInCategory
+  name: PriorityInCategory
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_PriorityInCategory
+  commentId: P:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.PriorityInCategory
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.PriorityInCategory
+  nameWithType: CombinedParamsColumn.PriorityInCategory
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.PriorityInCategory*
+  name: PriorityInCategory
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_PriorityInCategory_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.PriorityInCategory
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.PriorityInCategory
+  nameWithType: CombinedParamsColumn.PriorityInCategory
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.ToString
+  name: ToString()
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_ToString
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.ToString
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.ToString()
+  nameWithType: CombinedParamsColumn.ToString()
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.ToString*
+  name: ToString
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_ToString_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.ToString
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.ToString
+  nameWithType: CombinedParamsColumn.ToString
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.UnitType
+  name: UnitType
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_UnitType
+  commentId: P:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.UnitType
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.UnitType
+  nameWithType: CombinedParamsColumn.UnitType
+- uid: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.UnitType*
+  name: UnitType
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html#Mawosoft_Extensions_BenchmarkDotNet_CombinedParamsColumn_UnitType_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.UnitType
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.UnitType
+  nameWithType: CombinedParamsColumn.UnitType
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions
+  name: ConfigExtensions
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html
+  commentId: T:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions
+  nameWithType: ConfigExtensions
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.RemoveColumnsByCategory(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Columns.ColumnCategory[])
+  name: RemoveColumnsByCategory(IConfig, ColumnCategory[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_RemoveColumnsByCategory_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Columns_ColumnCategory___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.RemoveColumnsByCategory(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Columns.ColumnCategory[])
+  name.vb: RemoveColumnsByCategory(IConfig, ColumnCategory())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.RemoveColumnsByCategory(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Columns.ColumnCategory[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.RemoveColumnsByCategory(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Columns.ColumnCategory())
+  nameWithType: ConfigExtensions.RemoveColumnsByCategory(IConfig, ColumnCategory[])
+  nameWithType.vb: ConfigExtensions.RemoveColumnsByCategory(IConfig, ColumnCategory())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.RemoveColumnsByCategory(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Columns.ColumnCategory[])
+  name: RemoveColumnsByCategory(ManualConfig, ColumnCategory[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_RemoveColumnsByCategory_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Columns_ColumnCategory___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.RemoveColumnsByCategory(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Columns.ColumnCategory[])
+  name.vb: RemoveColumnsByCategory(ManualConfig, ColumnCategory())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.RemoveColumnsByCategory(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Columns.ColumnCategory[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.RemoveColumnsByCategory(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Columns.ColumnCategory())
+  nameWithType: ConfigExtensions.RemoveColumnsByCategory(ManualConfig, ColumnCategory[])
+  nameWithType.vb: ConfigExtensions.RemoveColumnsByCategory(ManualConfig, ColumnCategory())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.RemoveColumnsByCategory*
+  name: RemoveColumnsByCategory
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_RemoveColumnsByCategory_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.RemoveColumnsByCategory
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.RemoveColumnsByCategory
+  nameWithType: ConfigExtensions.RemoveColumnsByCategory
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceAnalysers(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Analysers.IAnalyser[])
+  name: ReplaceAnalysers(IConfig, IAnalyser[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceAnalysers_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Analysers_IAnalyser___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceAnalysers(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Analysers.IAnalyser[])
+  name.vb: ReplaceAnalysers(IConfig, IAnalyser())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceAnalysers(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Analysers.IAnalyser[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceAnalysers(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Analysers.IAnalyser())
+  nameWithType: ConfigExtensions.ReplaceAnalysers(IConfig, IAnalyser[])
+  nameWithType.vb: ConfigExtensions.ReplaceAnalysers(IConfig, IAnalyser())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceAnalysers(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Analysers.IAnalyser[])
+  name: ReplaceAnalysers(ManualConfig, IAnalyser[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceAnalysers_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Analysers_IAnalyser___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceAnalysers(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Analysers.IAnalyser[])
+  name.vb: ReplaceAnalysers(ManualConfig, IAnalyser())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceAnalysers(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Analysers.IAnalyser[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceAnalysers(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Analysers.IAnalyser())
+  nameWithType: ConfigExtensions.ReplaceAnalysers(ManualConfig, IAnalyser[])
+  nameWithType.vb: ConfigExtensions.ReplaceAnalysers(ManualConfig, IAnalyser())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceAnalysers*
+  name: ReplaceAnalysers
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceAnalysers_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceAnalysers
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceAnalysers
+  nameWithType: ConfigExtensions.ReplaceAnalysers
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Columns.IColumn[])
+  name: ReplaceColumnCategory(IConfig, IColumn[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceColumnCategory_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Columns_IColumn___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Columns.IColumn[])
+  name.vb: ReplaceColumnCategory(IConfig, IColumn())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Columns.IColumn[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Columns.IColumn())
+  nameWithType: ConfigExtensions.ReplaceColumnCategory(IConfig, IColumn[])
+  nameWithType.vb: ConfigExtensions.ReplaceColumnCategory(IConfig, IColumn())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Columns.IColumnProvider[])
+  name: ReplaceColumnCategory(IConfig, IColumnProvider[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceColumnCategory_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Columns_IColumnProvider___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Columns.IColumnProvider[])
+  name.vb: ReplaceColumnCategory(IConfig, IColumnProvider())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Columns.IColumnProvider[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Columns.IColumnProvider())
+  nameWithType: ConfigExtensions.ReplaceColumnCategory(IConfig, IColumnProvider[])
+  nameWithType.vb: ConfigExtensions.ReplaceColumnCategory(IConfig, IColumnProvider())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Columns.IColumn[])
+  name: ReplaceColumnCategory(ManualConfig, IColumn[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceColumnCategory_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Columns_IColumn___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Columns.IColumn[])
+  name.vb: ReplaceColumnCategory(ManualConfig, IColumn())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Columns.IColumn[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Columns.IColumn())
+  nameWithType: ConfigExtensions.ReplaceColumnCategory(ManualConfig, IColumn[])
+  nameWithType.vb: ConfigExtensions.ReplaceColumnCategory(ManualConfig, IColumn())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Columns.IColumnProvider[])
+  name: ReplaceColumnCategory(ManualConfig, IColumnProvider[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceColumnCategory_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Columns_IColumnProvider___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Columns.IColumnProvider[])
+  name.vb: ReplaceColumnCategory(ManualConfig, IColumnProvider())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Columns.IColumnProvider[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Columns.IColumnProvider())
+  nameWithType: ConfigExtensions.ReplaceColumnCategory(ManualConfig, IColumnProvider[])
+  nameWithType.vb: ConfigExtensions.ReplaceColumnCategory(ManualConfig, IColumnProvider())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory*
+  name: ReplaceColumnCategory
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceColumnCategory_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceColumnCategory
+  nameWithType: ConfigExtensions.ReplaceColumnCategory
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceDiagnosers(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Diagnosers.IDiagnoser[])
+  name: ReplaceDiagnosers(IConfig, IDiagnoser[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceDiagnosers_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Diagnosers_IDiagnoser___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceDiagnosers(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Diagnosers.IDiagnoser[])
+  name.vb: ReplaceDiagnosers(IConfig, IDiagnoser())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceDiagnosers(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Diagnosers.IDiagnoser[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceDiagnosers(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Diagnosers.IDiagnoser())
+  nameWithType: ConfigExtensions.ReplaceDiagnosers(IConfig, IDiagnoser[])
+  nameWithType.vb: ConfigExtensions.ReplaceDiagnosers(IConfig, IDiagnoser())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceDiagnosers(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Diagnosers.IDiagnoser[])
+  name: ReplaceDiagnosers(ManualConfig, IDiagnoser[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceDiagnosers_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Diagnosers_IDiagnoser___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceDiagnosers(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Diagnosers.IDiagnoser[])
+  name.vb: ReplaceDiagnosers(ManualConfig, IDiagnoser())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceDiagnosers(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Diagnosers.IDiagnoser[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceDiagnosers(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Diagnosers.IDiagnoser())
+  nameWithType: ConfigExtensions.ReplaceDiagnosers(ManualConfig, IDiagnoser[])
+  nameWithType.vb: ConfigExtensions.ReplaceDiagnosers(ManualConfig, IDiagnoser())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceDiagnosers*
+  name: ReplaceDiagnosers
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceDiagnosers_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceDiagnosers
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceDiagnosers
+  nameWithType: ConfigExtensions.ReplaceDiagnosers
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceExporters(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Exporters.IExporter[])
+  name: ReplaceExporters(IConfig, IExporter[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceExporters_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Exporters_IExporter___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceExporters(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Exporters.IExporter[])
+  name.vb: ReplaceExporters(IConfig, IExporter())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceExporters(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Exporters.IExporter[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceExporters(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Exporters.IExporter())
+  nameWithType: ConfigExtensions.ReplaceExporters(IConfig, IExporter[])
+  nameWithType.vb: ConfigExtensions.ReplaceExporters(IConfig, IExporter())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceExporters(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Exporters.IExporter[])
+  name: ReplaceExporters(ManualConfig, IExporter[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceExporters_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Exporters_IExporter___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceExporters(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Exporters.IExporter[])
+  name.vb: ReplaceExporters(ManualConfig, IExporter())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceExporters(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Exporters.IExporter[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceExporters(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Exporters.IExporter())
+  nameWithType: ConfigExtensions.ReplaceExporters(ManualConfig, IExporter[])
+  nameWithType.vb: ConfigExtensions.ReplaceExporters(ManualConfig, IExporter())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceExporters*
+  name: ReplaceExporters
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceExporters_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceExporters
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceExporters
+  nameWithType: ConfigExtensions.ReplaceExporters
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceFilters(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Filters.IFilter[])
+  name: ReplaceFilters(IConfig, IFilter[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceFilters_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Filters_IFilter___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceFilters(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Filters.IFilter[])
+  name.vb: ReplaceFilters(IConfig, IFilter())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceFilters(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Filters.IFilter[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceFilters(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Filters.IFilter())
+  nameWithType: ConfigExtensions.ReplaceFilters(IConfig, IFilter[])
+  nameWithType.vb: ConfigExtensions.ReplaceFilters(IConfig, IFilter())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceFilters(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Filters.IFilter[])
+  name: ReplaceFilters(ManualConfig, IFilter[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceFilters_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Filters_IFilter___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceFilters(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Filters.IFilter[])
+  name.vb: ReplaceFilters(ManualConfig, IFilter())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceFilters(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Filters.IFilter[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceFilters(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Filters.IFilter())
+  nameWithType: ConfigExtensions.ReplaceFilters(ManualConfig, IFilter[])
+  nameWithType.vb: ConfigExtensions.ReplaceFilters(ManualConfig, IFilter())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceFilters*
+  name: ReplaceFilters
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceFilters_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceFilters
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceFilters
+  nameWithType: ConfigExtensions.ReplaceFilters
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceHardwareCounters(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Diagnosers.HardwareCounter[])
+  name: ReplaceHardwareCounters(IConfig, HardwareCounter[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceHardwareCounters_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Diagnosers_HardwareCounter___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceHardwareCounters(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Diagnosers.HardwareCounter[])
+  name.vb: ReplaceHardwareCounters(IConfig, HardwareCounter())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceHardwareCounters(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Diagnosers.HardwareCounter[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceHardwareCounters(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Diagnosers.HardwareCounter())
+  nameWithType: ConfigExtensions.ReplaceHardwareCounters(IConfig, HardwareCounter[])
+  nameWithType.vb: ConfigExtensions.ReplaceHardwareCounters(IConfig, HardwareCounter())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceHardwareCounters(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Diagnosers.HardwareCounter[])
+  name: ReplaceHardwareCounters(ManualConfig, HardwareCounter[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceHardwareCounters_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Diagnosers_HardwareCounter___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceHardwareCounters(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Diagnosers.HardwareCounter[])
+  name.vb: ReplaceHardwareCounters(ManualConfig, HardwareCounter())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceHardwareCounters(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Diagnosers.HardwareCounter[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceHardwareCounters(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Diagnosers.HardwareCounter())
+  nameWithType: ConfigExtensions.ReplaceHardwareCounters(ManualConfig, HardwareCounter[])
+  nameWithType.vb: ConfigExtensions.ReplaceHardwareCounters(ManualConfig, HardwareCounter())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceHardwareCounters*
+  name: ReplaceHardwareCounters
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceHardwareCounters_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceHardwareCounters
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceHardwareCounters
+  nameWithType: ConfigExtensions.ReplaceHardwareCounters
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceJobs(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Jobs.Job[])
+  name: ReplaceJobs(IConfig, Job[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceJobs_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Jobs_Job___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceJobs(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Jobs.Job[])
+  name.vb: ReplaceJobs(IConfig, Job())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceJobs(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Jobs.Job[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceJobs(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Jobs.Job())
+  nameWithType: ConfigExtensions.ReplaceJobs(IConfig, Job[])
+  nameWithType.vb: ConfigExtensions.ReplaceJobs(IConfig, Job())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceJobs(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Jobs.Job[])
+  name: ReplaceJobs(ManualConfig, Job[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceJobs_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Jobs_Job___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceJobs(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Jobs.Job[])
+  name.vb: ReplaceJobs(ManualConfig, Job())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceJobs(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Jobs.Job[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceJobs(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Jobs.Job())
+  nameWithType: ConfigExtensions.ReplaceJobs(ManualConfig, Job[])
+  nameWithType.vb: ConfigExtensions.ReplaceJobs(ManualConfig, Job())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceJobs*
+  name: ReplaceJobs
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceJobs_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceJobs
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceJobs
+  nameWithType: ConfigExtensions.ReplaceJobs
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLoggers(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Loggers.ILogger[])
+  name: ReplaceLoggers(IConfig, ILogger[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceLoggers_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Loggers_ILogger___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLoggers(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Loggers.ILogger[])
+  name.vb: ReplaceLoggers(IConfig, ILogger())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLoggers(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Loggers.ILogger[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLoggers(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Loggers.ILogger())
+  nameWithType: ConfigExtensions.ReplaceLoggers(IConfig, ILogger[])
+  nameWithType.vb: ConfigExtensions.ReplaceLoggers(IConfig, ILogger())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLoggers(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Loggers.ILogger[])
+  name: ReplaceLoggers(ManualConfig, ILogger[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceLoggers_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Loggers_ILogger___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLoggers(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Loggers.ILogger[])
+  name.vb: ReplaceLoggers(ManualConfig, ILogger())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLoggers(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Loggers.ILogger[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLoggers(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Loggers.ILogger())
+  nameWithType: ConfigExtensions.ReplaceLoggers(ManualConfig, ILogger[])
+  nameWithType.vb: ConfigExtensions.ReplaceLoggers(ManualConfig, ILogger())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLoggers*
+  name: ReplaceLoggers
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceLoggers_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLoggers
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLoggers
+  nameWithType: ConfigExtensions.ReplaceLoggers
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLogicalGroupRules(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Configs.BenchmarkLogicalGroupRule[])
+  name: ReplaceLogicalGroupRules(IConfig, BenchmarkLogicalGroupRule[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceLogicalGroupRules_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Configs_BenchmarkLogicalGroupRule___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLogicalGroupRules(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Configs.BenchmarkLogicalGroupRule[])
+  name.vb: ReplaceLogicalGroupRules(IConfig, BenchmarkLogicalGroupRule())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLogicalGroupRules(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Configs.BenchmarkLogicalGroupRule[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLogicalGroupRules(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Configs.BenchmarkLogicalGroupRule())
+  nameWithType: ConfigExtensions.ReplaceLogicalGroupRules(IConfig, BenchmarkLogicalGroupRule[])
+  nameWithType.vb: ConfigExtensions.ReplaceLogicalGroupRules(IConfig, BenchmarkLogicalGroupRule())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLogicalGroupRules(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Configs.BenchmarkLogicalGroupRule[])
+  name: ReplaceLogicalGroupRules(ManualConfig, BenchmarkLogicalGroupRule[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceLogicalGroupRules_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Configs_BenchmarkLogicalGroupRule___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLogicalGroupRules(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Configs.BenchmarkLogicalGroupRule[])
+  name.vb: ReplaceLogicalGroupRules(ManualConfig, BenchmarkLogicalGroupRule())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLogicalGroupRules(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Configs.BenchmarkLogicalGroupRule[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLogicalGroupRules(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Configs.BenchmarkLogicalGroupRule())
+  nameWithType: ConfigExtensions.ReplaceLogicalGroupRules(ManualConfig, BenchmarkLogicalGroupRule[])
+  nameWithType.vb: ConfigExtensions.ReplaceLogicalGroupRules(ManualConfig, BenchmarkLogicalGroupRule())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLogicalGroupRules*
+  name: ReplaceLogicalGroupRules
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceLogicalGroupRules_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLogicalGroupRules
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceLogicalGroupRules
+  nameWithType: ConfigExtensions.ReplaceLogicalGroupRules
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceValidators(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Validators.IValidator[])
+  name: ReplaceValidators(IConfig, IValidator[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceValidators_BenchmarkDotNet_Configs_IConfig_BenchmarkDotNet_Validators_IValidator___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceValidators(BenchmarkDotNet.Configs.IConfig,BenchmarkDotNet.Validators.IValidator[])
+  name.vb: ReplaceValidators(IConfig, IValidator())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceValidators(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Validators.IValidator[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceValidators(BenchmarkDotNet.Configs.IConfig, BenchmarkDotNet.Validators.IValidator())
+  nameWithType: ConfigExtensions.ReplaceValidators(IConfig, IValidator[])
+  nameWithType.vb: ConfigExtensions.ReplaceValidators(IConfig, IValidator())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceValidators(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Validators.IValidator[])
+  name: ReplaceValidators(ManualConfig, IValidator[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceValidators_BenchmarkDotNet_Configs_ManualConfig_BenchmarkDotNet_Validators_IValidator___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceValidators(BenchmarkDotNet.Configs.ManualConfig,BenchmarkDotNet.Validators.IValidator[])
+  name.vb: ReplaceValidators(ManualConfig, IValidator())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceValidators(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Validators.IValidator[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceValidators(BenchmarkDotNet.Configs.ManualConfig, BenchmarkDotNet.Validators.IValidator())
+  nameWithType: ConfigExtensions.ReplaceValidators(ManualConfig, IValidator[])
+  nameWithType.vb: ConfigExtensions.ReplaceValidators(ManualConfig, IValidator())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceValidators*
+  name: ReplaceValidators
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html#Mawosoft_Extensions_BenchmarkDotNet_ConfigExtensions_ReplaceValidators_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceValidators
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.ReplaceValidators
+  nameWithType: ConfigExtensions.ReplaceValidators
+- uid: Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider
+  name: JobColumnSelectionProvider
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.html
+  commentId: T:Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider
+  nameWithType: JobColumnSelectionProvider
+- uid: Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.#ctor(System.String,System.Boolean)
+  name: JobColumnSelectionProvider(String, Boolean)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.html#Mawosoft_Extensions_BenchmarkDotNet_JobColumnSelectionProvider__ctor_System_String_System_Boolean_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.#ctor(System.String,System.Boolean)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.JobColumnSelectionProvider(System.String, System.Boolean)
+  nameWithType: JobColumnSelectionProvider.JobColumnSelectionProvider(String, Boolean)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.#ctor*
+  name: JobColumnSelectionProvider
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.html#Mawosoft_Extensions_BenchmarkDotNet_JobColumnSelectionProvider__ctor_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.#ctor
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.JobColumnSelectionProvider
+  nameWithType: JobColumnSelectionProvider.JobColumnSelectionProvider
+- uid: Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.GetColumns(BenchmarkDotNet.Reports.Summary)
+  name: GetColumns(Summary)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.html#Mawosoft_Extensions_BenchmarkDotNet_JobColumnSelectionProvider_GetColumns_BenchmarkDotNet_Reports_Summary_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.GetColumns(BenchmarkDotNet.Reports.Summary)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.GetColumns(BenchmarkDotNet.Reports.Summary)
+  nameWithType: JobColumnSelectionProvider.GetColumns(Summary)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.GetColumns*
+  name: GetColumns
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.html#Mawosoft_Extensions_BenchmarkDotNet_JobColumnSelectionProvider_GetColumns_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.GetColumns
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.GetColumns
+  nameWithType: JobColumnSelectionProvider.GetColumns
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper`1
+  name: ParamWrapper<T>
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper-1.html
+  commentId: T:Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper`1
+  name.vb: ParamWrapper(Of T)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper<T>
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper(Of T)
+  nameWithType: ParamWrapper<T>
+  nameWithType.vb: ParamWrapper(Of T)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper`1.#ctor(`0,System.String)
+  name: ParamWrapper(T, String)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper-1.html#Mawosoft_Extensions_BenchmarkDotNet_ParamWrapper_1__ctor__0_System_String_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper`1.#ctor(`0,System.String)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper<T>.ParamWrapper(T, System.String)
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper(Of T).ParamWrapper(T, System.String)
+  nameWithType: ParamWrapper<T>.ParamWrapper(T, String)
+  nameWithType.vb: ParamWrapper(Of T).ParamWrapper(T, String)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper`1.#ctor*
+  name: ParamWrapper
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper-1.html#Mawosoft_Extensions_BenchmarkDotNet_ParamWrapper_1__ctor_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper`1.#ctor
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper<T>.ParamWrapper
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper(Of T).ParamWrapper
+  nameWithType: ParamWrapper<T>.ParamWrapper
+  nameWithType.vb: ParamWrapper(Of T).ParamWrapper
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper`1.DisplayText
+  name: DisplayText
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper-1.html#Mawosoft_Extensions_BenchmarkDotNet_ParamWrapper_1_DisplayText
+  commentId: F:Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper`1.DisplayText
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper<T>.DisplayText
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper(Of T).DisplayText
+  nameWithType: ParamWrapper<T>.DisplayText
+  nameWithType.vb: ParamWrapper(Of T).DisplayText
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper`1.Dispose
+  name: Dispose()
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper-1.html#Mawosoft_Extensions_BenchmarkDotNet_ParamWrapper_1_Dispose
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper`1.Dispose
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper<T>.Dispose()
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper(Of T).Dispose()
+  nameWithType: ParamWrapper<T>.Dispose()
+  nameWithType.vb: ParamWrapper(Of T).Dispose()
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper`1.Dispose*
+  name: Dispose
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper-1.html#Mawosoft_Extensions_BenchmarkDotNet_ParamWrapper_1_Dispose_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper`1.Dispose
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper<T>.Dispose
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper(Of T).Dispose
+  nameWithType: ParamWrapper<T>.Dispose
+  nameWithType.vb: ParamWrapper(Of T).Dispose
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper`1.ToString
+  name: ToString()
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper-1.html#Mawosoft_Extensions_BenchmarkDotNet_ParamWrapper_1_ToString
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper`1.ToString
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper<T>.ToString()
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper(Of T).ToString()
+  nameWithType: ParamWrapper<T>.ToString()
+  nameWithType.vb: ParamWrapper(Of T).ToString()
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper`1.ToString*
+  name: ToString
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper-1.html#Mawosoft_Extensions_BenchmarkDotNet_ParamWrapper_1_ToString_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper`1.ToString
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper<T>.ToString
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper(Of T).ToString
+  nameWithType: ParamWrapper<T>.ToString
+  nameWithType.vb: ParamWrapper(Of T).ToString
+- uid: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper`1.Value
+  name: Value
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper-1.html#Mawosoft_Extensions_BenchmarkDotNet_ParamWrapper_1_Value
+  commentId: F:Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper`1.Value
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper<T>.Value
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper(Of T).Value
+  nameWithType: ParamWrapper<T>.Value
+  nameWithType.vb: ParamWrapper(Of T).Value
+- uid: Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider
+  name: RecyclableParamsColumnProvider
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.html
+  commentId: T:Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider
+  nameWithType: RecyclableParamsColumnProvider
+- uid: Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.#ctor(System.Boolean,System.String)
+  name: RecyclableParamsColumnProvider(Boolean, String)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.html#Mawosoft_Extensions_BenchmarkDotNet_RecyclableParamsColumnProvider__ctor_System_Boolean_System_String_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.#ctor(System.Boolean,System.String)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.RecyclableParamsColumnProvider(System.Boolean, System.String)
+  nameWithType: RecyclableParamsColumnProvider.RecyclableParamsColumnProvider(Boolean, String)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.#ctor*
+  name: RecyclableParamsColumnProvider
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.html#Mawosoft_Extensions_BenchmarkDotNet_RecyclableParamsColumnProvider__ctor_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.#ctor
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.RecyclableParamsColumnProvider
+  nameWithType: RecyclableParamsColumnProvider.RecyclableParamsColumnProvider
+- uid: Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.GetColumns(BenchmarkDotNet.Reports.Summary)
+  name: GetColumns(Summary)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.html#Mawosoft_Extensions_BenchmarkDotNet_RecyclableParamsColumnProvider_GetColumns_BenchmarkDotNet_Reports_Summary_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.GetColumns(BenchmarkDotNet.Reports.Summary)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.GetColumns(BenchmarkDotNet.Reports.Summary)
+  nameWithType: RecyclableParamsColumnProvider.GetColumns(Summary)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.GetColumns*
+  name: GetColumns
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.html#Mawosoft_Extensions_BenchmarkDotNet_RecyclableParamsColumnProvider_GetColumns_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.GetColumns
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.GetColumns
+  nameWithType: RecyclableParamsColumnProvider.GetColumns
+- uid: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter
+  name: WhatifFilter
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html
+  commentId: T:Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter
+  nameWithType: WhatifFilter
+- uid: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Clear(System.Boolean)
+  name: Clear(Boolean)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_Clear_System_Boolean_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Clear(System.Boolean)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Clear(System.Boolean)
+  nameWithType: WhatifFilter.Clear(Boolean)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Clear*
+  name: Clear
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_Clear_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Clear
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Clear
+  nameWithType: WhatifFilter.Clear
+- uid: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Enabled
+  name: Enabled
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_Enabled
+  commentId: P:Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Enabled
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Enabled
+  nameWithType: WhatifFilter.Enabled
+- uid: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Enabled*
+  name: Enabled
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_Enabled_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Enabled
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Enabled
+  nameWithType: WhatifFilter.Enabled
+- uid: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.FilteredBenchmarkCases
+  name: FilteredBenchmarkCases
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_FilteredBenchmarkCases
+  commentId: P:Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.FilteredBenchmarkCases
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.FilteredBenchmarkCases
+  nameWithType: WhatifFilter.FilteredBenchmarkCases
+- uid: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.FilteredBenchmarkCases*
+  name: FilteredBenchmarkCases
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_FilteredBenchmarkCases_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.FilteredBenchmarkCases
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.FilteredBenchmarkCases
+  nameWithType: WhatifFilter.FilteredBenchmarkCases
+- uid: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.FilteredBenchmarkRunInfos
+  name: FilteredBenchmarkRunInfos
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_FilteredBenchmarkRunInfos
+  commentId: P:Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.FilteredBenchmarkRunInfos
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.FilteredBenchmarkRunInfos
+  nameWithType: WhatifFilter.FilteredBenchmarkRunInfos
+- uid: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.FilteredBenchmarkRunInfos*
+  name: FilteredBenchmarkRunInfos
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_FilteredBenchmarkRunInfos_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.FilteredBenchmarkRunInfos
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.FilteredBenchmarkRunInfos
+  nameWithType: WhatifFilter.FilteredBenchmarkRunInfos
+- uid: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Predicate(BenchmarkDotNet.Running.BenchmarkCase)
+  name: Predicate(BenchmarkCase)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_Predicate_BenchmarkDotNet_Running_BenchmarkCase_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Predicate(BenchmarkDotNet.Running.BenchmarkCase)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Predicate(BenchmarkDotNet.Running.BenchmarkCase)
+  nameWithType: WhatifFilter.Predicate(BenchmarkCase)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Predicate*
+  name: Predicate
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_Predicate_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Predicate
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Predicate
+  nameWithType: WhatifFilter.Predicate
+- uid: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.PreparseConsoleArguments(System.String[])
+  name: PreparseConsoleArguments(String[])
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_PreparseConsoleArguments_System_String___
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.PreparseConsoleArguments(System.String[])
+  name.vb: PreparseConsoleArguments(String())
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.PreparseConsoleArguments(System.String[])
+  fullName.vb: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.PreparseConsoleArguments(System.String())
+  nameWithType: WhatifFilter.PreparseConsoleArguments(String[])
+  nameWithType.vb: WhatifFilter.PreparseConsoleArguments(String())
+- uid: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.PreparseConsoleArguments*
+  name: PreparseConsoleArguments
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_PreparseConsoleArguments_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.PreparseConsoleArguments
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.PreparseConsoleArguments
+  nameWithType: WhatifFilter.PreparseConsoleArguments
+- uid: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.PrintAsSummaries(BenchmarkDotNet.Loggers.ILogger)
+  name: PrintAsSummaries(ILogger)
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_PrintAsSummaries_BenchmarkDotNet_Loggers_ILogger_
+  commentId: M:Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.PrintAsSummaries(BenchmarkDotNet.Loggers.ILogger)
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.PrintAsSummaries(BenchmarkDotNet.Loggers.ILogger)
+  nameWithType: WhatifFilter.PrintAsSummaries(ILogger)
+- uid: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.PrintAsSummaries*
+  name: PrintAsSummaries
+  href: api/Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_PrintAsSummaries_
+  commentId: Overload:Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.PrintAsSummaries
+  isSpec: "True"
+  fullName: Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.PrintAsSummaries
+  nameWithType: WhatifFilter.PrintAsSummaries

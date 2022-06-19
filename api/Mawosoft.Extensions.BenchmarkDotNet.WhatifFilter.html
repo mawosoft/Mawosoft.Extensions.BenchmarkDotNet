@@ -1,0 +1,551 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class WhatifFilter
+   | Mawosoft Extensions for BenchmarkDotNet </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class WhatifFilter
+   | Mawosoft Extensions for BenchmarkDotNet ">
+    <meta name="generator" content="docfx 2.59.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter">
+  
+  
+  <h1 id="Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter" data-uid="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter" class="text-break">Class WhatifFilter
+  </h1>
+  <div class="markdown level0 summary"><p>An alternative to BenchmarkDotNet&apos;s <code>--list</code> command line option that prints a mock
+summary of all available benchmarks according to the current effective BenchmarkDotNet configuration.</p>
+</div>
+  <div class="markdown level0 conceptual"><p>A <em>configuration</em> is the interplay of console arguments, global and local configs, and attributes.
+The <code>WhatifFilter</code> can be controlled either programmatically via the 
+<a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_Enabled">Enabled</a> property, or by using
+the <code>--whatif</code> option (short: <code>-w</code>) on the command line and passing the console arguments through
+<a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_PreparseConsoleArguments_System_String___">PreparseConsoleArguments()</a>.</p>
+<p>If enabled, the filter will collect all benchmark cases created by
+<a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkRunner.html">BenchmarkRunner</a>,
+<a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkSwitcher.html">BenchmarkSwitcher</a>,
+or <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkConverter.html">BenchmarkConverter</a>
+and suppress their execution.</p>
+<p>The properties <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_FilteredBenchmarkCases">FilteredBenchmarkCases</a>
+and <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_FilteredBenchmarkRunInfos">FilteredBenchmarkRunInfos</a>
+provide access to the collected benchmarks,
+while <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html#Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_PrintAsSummaries_BenchmarkDotNet_Loggers_ILogger_">PrintAsSummaries()</a>
+outputs them to the console or another logger.</p>
+</div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">WhatifFilter</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Filters.IFilter.html">IFilter</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Mawosoft.Extensions.BenchmarkDotNet.html">Mawosoft.Extensions.BenchmarkDotNet</a></h6>
+  <h6><strong>Assembly</strong>: Mawosoft.Extensions.BenchmarkDotNet.dll</h6>
+  <h5 id="Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class WhatifFilter : IFilter</code></pre>
+  </div>
+  <h5 id="Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_examples"><strong>Examples</strong></h5>
+  <pre><code class="lang-csharp">public static void Main(string[] args)
+{
+    // Create the WhatifFilter and let it process the --whatif argument if one exists.
+    WhatifFilter whatifFilter = new();
+    args = whatifFilter.PreparseConsoleArguments(args);
+
+    // Create a global confing and add the filter (DefaultConfig used for simplicity).
+    ManualConfig config = DefaultConfig.Instance.AddFilter(whatifFilter);
+
+    // Run the benchmarks as you would normally do. If the filter was enabled,
+    // execution has been supressed and the returned array will be empty.
+    Summary[] summaries = BenchmarkRunner.Run(typeof(Program).Assembly, config, args);
+
+    // Check the filter and print the What-if summaries
+    if (whatifFilter.Enabled)
+    {
+        whatifFilter.PrintAsSummaries(ConsoleLogger.Default);
+        whatifFilter.Clear(dispose: true);
+    }
+}
+</code></pre><p style="height:0px;">&#160;</p>
+
+<div class="detailsHolder"><p><summary class="h5">Sample Output</summary></p>
+<div class="tabGroup" id="tabgroup_460CILlcPP">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_460CILlcPP_tabid-1" role="tab" aria-controls="tabpanel_460CILlcPP_tabid-1" data-tab="tabid-1" tabindex="0" aria-selected="true">--whatif</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_460CILlcPP_tabid-2" role="tab" aria-controls="tabpanel_460CILlcPP_tabid-2" data-tab="tabid-2" tabindex="-1">--list flat</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_460CILlcPP_tabid-3" role="tab" aria-controls="tabpanel_460CILlcPP_tabid-3" data-tab="tabid-3" tabindex="-1">--list tree</a>
+</li>
+</ul>
+<section id="tabpanel_460CILlcPP_tabid-1" role="tabpanel" data-tab="tabid-1">
+<pre>
+// * What If Summary *
+
+Console arguments: --runtimes net5.0 netcoreapp31 net48 --whatif
+
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19042.1237 (20H2/October2020Update), VM=VirtualBox
+AMD Ryzen 5 3400G with Radeon Vega Graphics, 1 CPU, 4 logical and 4 physical cores
+.NET SDK=5.0.401
+  [Host] : .NET 5.0.10 (5.0.1021.41214), X64 RyuJIT
+
+
+// Benchmarks1
+
+IterationCount=3  LaunchCount=1  WarmupCount=3
+
+|  Method |        Job |            Runtime |    Toolchain |     Mean | Error | Ratio |
+|-------- |----------- |------------------- |------------- |---------:|------:|------:|
+| Method1 | Job-PFBCDR |           .NET 5.0 |       net5.0 | 102.0 ms |    NA |  1.00 |
+| Method2 | Job-PFBCDR |           .NET 5.0 |       net5.0 | 105.0 ms |    NA |  1.03 |
+| Method3 | Job-PFBCDR |           .NET 5.0 |       net5.0 | 108.0 ms |    NA |  1.06 |
+| Method1 | Job-GTPATI |      .NET Core 3.1 | netcoreapp31 | 100.0 ms |    NA |  0.98 |
+| Method2 | Job-GTPATI |      .NET Core 3.1 | netcoreapp31 | 103.0 ms |    NA |  1.01 |
+| Method3 | Job-GTPATI |      .NET Core 3.1 | netcoreapp31 | 106.0 ms |    NA |  1.04 |
+| Method1 | Job-LLNYBD | .NET Framework 4.8 |        net48 | 101.0 ms |    NA |  0.99 |
+| Method2 | Job-LLNYBD | .NET Framework 4.8 |        net48 | 104.0 ms |    NA |  1.02 |
+| Method3 | Job-LLNYBD | .NET Framework 4.8 |        net48 | 107.0 ms |    NA |  1.05 |
+</pre>
+<pre>
+// Benchmarks2
+
+IterationCount=3  LaunchCount=1  WarmupCount=3
+
+|  Method |        Job |            Runtime |    Toolchain | Prop1 | next |     Mean | Error | Ratio |
+|-------- |----------- |------------------- |------------- |------ |----- |---------:|------:|------:|
+| Method3 | Job-PFBCDR |           .NET 5.0 |       net5.0 | False |   44 | 125.0 ms |    NA |  1.00 |
+| Method3 | Job-GTPATI |      .NET Core 3.1 | netcoreapp31 | False |   44 | 121.0 ms |    NA |  0.97 |
+| Method3 | Job-LLNYBD | .NET Framework 4.8 |        net48 | False |   44 | 123.0 ms |    NA |  0.98 |
+|         |            |                    |              |       |      |          |       |       |
+| Method1 | Job-PFBCDR |           .NET 5.0 |       net5.0 | False |    ? | 113.0 ms |    NA |  1.00 |
+| Method1 | Job-GTPATI |      .NET Core 3.1 | netcoreapp31 | False |    ? | 109.0 ms |    NA |  0.96 |
+| Method1 | Job-LLNYBD | .NET Framework 4.8 |        net48 | False |    ? | 111.0 ms |    NA |  0.98 |
+|         |            |                    |              |       |      |          |       |       |
+| Method2 | Job-PFBCDR |           .NET 5.0 |       net5.0 | False |    ? | 119.0 ms |    NA |  1.00 |
+| Method2 | Job-GTPATI |      .NET Core 3.1 | netcoreapp31 | False |    ? | 115.0 ms |    NA |  0.97 |
+| Method2 | Job-LLNYBD | .NET Framework 4.8 |        net48 | False |    ? | 117.0 ms |    NA |  0.98 |
+|         |            |                    |              |       |      |          |       |       |
+| Method3 | Job-PFBCDR |           .NET 5.0 |       net5.0 |  True |   44 | 126.0 ms |    NA |  1.00 |
+| Method3 | Job-GTPATI |      .NET Core 3.1 | netcoreapp31 |  True |   44 | 122.0 ms |    NA |  0.97 |
+| Method3 | Job-LLNYBD | .NET Framework 4.8 |        net48 |  True |   44 | 124.0 ms |    NA |  0.98 |
+|         |            |                    |              |       |      |          |       |       |
+| Method1 | Job-PFBCDR |           .NET 5.0 |       net5.0 |  True |    ? | 114.0 ms |    NA |  1.00 |
+| Method1 | Job-GTPATI |      .NET Core 3.1 | netcoreapp31 |  True |    ? | 110.0 ms |    NA |  0.96 |
+| Method1 | Job-LLNYBD | .NET Framework 4.8 |        net48 |  True |    ? | 112.0 ms |    NA |  0.98 |
+|         |            |                    |              |       |      |          |       |       |
+| Method2 | Job-PFBCDR |           .NET 5.0 |       net5.0 |  True |    ? | 120.0 ms |    NA |  1.00 |
+| Method2 | Job-GTPATI |      .NET Core 3.1 | netcoreapp31 |  True |    ? | 116.0 ms |    NA |  0.97 |
+| Method2 | Job-LLNYBD | .NET Framework 4.8 |        net48 |  True |    ? | 118.0 ms |    NA |  0.98 |
+</pre>
+<pre>
+// Benchmarks3
+
+LaunchCount=1
+
+|  Method |        Job |            Runtime |    Toolchain | IterationCount | RunStrategy | UnrollFactor | WarmupCount |     Mean | Error | Ratio |
+|-------- |----------- |------------------- |------------- |--------------- |------------ |------------- |------------ |---------:|------:|------:|
+| Method1 | Job-PFBCDR |           .NET 5.0 |       net5.0 |              3 |     Default |           16 |           3 | 129.0 ms |    NA |  1.00 |
+| Method1 | Job-GTPATI |      .NET Core 3.1 | netcoreapp31 |              3 |     Default |           16 |           3 | 127.0 ms |    NA |  0.98 |
+| Method1 | Job-LLNYBD | .NET Framework 4.8 |        net48 |              3 |     Default |           16 |           3 | 128.0 ms |    NA |  0.99 |
+| Method1 |        Dry |           .NET 5.0 |      Default |              1 |   ColdStart |            1 |           1 | 130.0 ms |    NA |  1.01 |
+|         |            |                    |              |                |             |              |             |          |       |       |
+| Method2 | Job-PFBCDR |           .NET 5.0 |       net5.0 |              3 |     Default |           16 |           3 | 133.0 ms |    NA |  1.00 |
+| Method2 | Job-GTPATI |      .NET Core 3.1 | netcoreapp31 |              3 |     Default |           16 |           3 | 131.0 ms |    NA |  0.98 |
+| Method2 | Job-LLNYBD | .NET Framework 4.8 |        net48 |              3 |     Default |           16 |           3 | 132.0 ms |    NA |  0.99 |
+| Method2 |        Dry |           .NET 5.0 |      Default |              1 |   ColdStart |            1 |           1 | 134.0 ms |    NA |  1.01 |
+</pre>
+</section>
+<section id="tabpanel_460CILlcPP_tabid-2" role="tabpanel" data-tab="tabid-2" aria-hidden="true" hidden="hidden">
+<p>Console arguments: --runtimes net5.0 netcoreapp31 net48 --list flat</p>
+<pre>
+WhatifFilterSample.Benchmarks1.Method1
+WhatifFilterSample.Benchmarks1.Method2
+WhatifFilterSample.Benchmarks1.Method3
+WhatifFilterSample.Benchmarks2.Method3
+WhatifFilterSample.Benchmarks2.Method1
+WhatifFilterSample.Benchmarks2.Method2
+WhatifFilterSample.Benchmarks3.Method1
+WhatifFilterSample.Benchmarks3.Method2
+</pre>
+</section>
+<section id="tabpanel_460CILlcPP_tabid-3" role="tabpanel" data-tab="tabid-3" aria-hidden="true" hidden="hidden">
+<p>Console arguments: --runtimes net5.0 netcoreapp31 net48 --list tree</p>
+<pre>
+WhatifFilterSample
+ ├─Benchmarks1
+ │  ├─Method1
+ │  ├─Method2
+ │  └─Method3
+ ├─Benchmarks2
+ │  ├─Method3
+ │  ├─Method1
+ │  └─Method2
+ └─Benchmarks3
+    ├─Method1
+    └─Method2
+</pre>
+</section>
+</div>
+</div>
+
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/WhatifFilter.cs/#L40">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_Enabled_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Enabled*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_Enabled" data-uid="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Enabled">Enabled</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the filter&#39;s <em>Enabled</em> state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Enabled { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>If <code>true</code>, the filter will collect all benchmark cases created by
+<a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkRunner.html">BenchmarkRunner</a> or related classes, and suppress their execution.
+If <code>false</code>, the filter is disabled and will not have any effect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/WhatifFilter.cs/#L45">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_FilteredBenchmarkCases_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.FilteredBenchmarkCases*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_FilteredBenchmarkCases" data-uid="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.FilteredBenchmarkCases">FilteredBenchmarkCases</h4>
+  <div class="markdown level1 summary"><p>Gets an enumerable collection of the filtered, individual benchmark cases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;BenchmarkCase&gt; FilteredBenchmarkCases { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkCase.html">BenchmarkCase</a>&gt;</td>
+        <td><p>The collection of the filtered, individual benchmark cases.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/WhatifFilter.cs/#L50">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_FilteredBenchmarkRunInfos_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.FilteredBenchmarkRunInfos*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_FilteredBenchmarkRunInfos" data-uid="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.FilteredBenchmarkRunInfos">FilteredBenchmarkRunInfos</h4>
+  <div class="markdown level1 summary"><p>Gets an enumerable collection of the filtered benchmark cases grouped by containing type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;BenchmarkRunInfo&gt; FilteredBenchmarkRunInfos { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkRunInfo.html">BenchmarkRunInfo</a>&gt;</td>
+        <td><p>The collection of the filtered, grouped benchmark cases.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/WhatifFilter.cs/#L97">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_Clear_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Clear*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_Clear_System_Boolean_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Clear(System.Boolean)">Clear(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Clears the list of collected benchmark cases and optionally disposes them.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear(bool dispose)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">dispose</span></td>
+        <td><p><code>true</code> to dispose all benchmarks, <code>false</code> to only remove them from the list without disposal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/WhatifFilter.cs/#L177">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_Predicate_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Predicate*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_Predicate_BenchmarkDotNet_Running_BenchmarkCase_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.Predicate(BenchmarkDotNet.Running.BenchmarkCase)">Predicate(BenchmarkCase)</h4>
+  <div class="markdown level1 summary"><p><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Filters.IFilter.html">IFilter</a> implementation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Predicate(BenchmarkCase benchmarkCase)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Running.BenchmarkCase.html">BenchmarkCase</a></td>
+        <td><span class="parametername">benchmarkCase</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/WhatifFilter.cs/#L61">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_PreparseConsoleArguments_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.PreparseConsoleArguments*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_PreparseConsoleArguments_System_String___" data-uid="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.PreparseConsoleArguments(System.String[])">PreparseConsoleArguments(String[])</h4>
+  <div class="markdown level1 summary"><p>Preparses the console arguments for the option <code>--whatif</code> (short: <code>-w</code>) and automatically
+enables the filter if the option is present.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string[] PreparseConsoleArguments(string[] args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>[]</td>
+        <td><span class="parametername">args</span></td>
+        <td><p>The array of console arguments as passed to the <code>Main</code> method of the
+application.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>[]</td>
+        <td><p>The passed in array of console arguments with the <code>--whatif</code> option removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/WhatifFilter.cs/#L109">View Source</a>
+  </span>
+  <a id="Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_PrintAsSummaries_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.PrintAsSummaries*"></a>
+  <h4 id="Mawosoft_Extensions_BenchmarkDotNet_WhatifFilter_PrintAsSummaries_BenchmarkDotNet_Loggers_ILogger_" data-uid="Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.PrintAsSummaries(BenchmarkDotNet.Loggers.ILogger)">PrintAsSummaries(ILogger)</h4>
+  <div class="markdown level1 summary"><p>Prints the collected benchmark cases as summaries to the given logger.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PrintAsSummaries(ILogger logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Loggers.ILogger.html">ILogger</a></td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>The logger to use for printing the summaries.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://benchmarkdotnet.org/api/BenchmarkDotNet.Filters.IFilter.html">IFilter</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><span><a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/tree/master/samples">What-If Filter Sample on GitHub</a></span></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/mawosoft/Mawosoft.Extensions.BenchmarkDotNet/blob/master/src/Mawosoft.Extensions.BenchmarkDotNet/WhatifFilter.cs/#L29" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2021-2022 Matthias Wolf, Mawosoft
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

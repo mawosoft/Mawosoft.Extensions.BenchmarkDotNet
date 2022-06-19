@@ -1,0 +1,233 @@
+{
+  "homepages": [],
+  "source_base_path": "/home/runner/work/Mawosoft.Extensions.BenchmarkDotNet/Mawosoft.Extensions.BenchmarkDotNet/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mawosoft.Extensions.BenchmarkDotNet.BenchmarkRunInfos.html",
+          "hash": "YAlzOHv/V7xlu0GokQj2Y0GK4OKG6dyvz2pRdQb8HHI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mawosoft.Extensions.BenchmarkDotNet.CombinedParamsColumn.html",
+          "hash": "4qbJ3/gFzH0THjkSuYZx3M64UJ3RR9r7TLoxuei/x2k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mawosoft.Extensions.BenchmarkDotNet.ConfigExtensions.html",
+          "hash": "N1JS077CoHbzxZZNKXD/wIsFOyg7OfCq34CHwziA6wU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mawosoft.Extensions.BenchmarkDotNet.JobColumnSelectionProvider.html",
+          "hash": "EjVuzRh4XjEO/Wx6wMrTPA2FmK2s4ikO0qEyv3xThOs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mawosoft.Extensions.BenchmarkDotNet.ParamWrapper-1.html",
+          "hash": "lZdvttUI+YlHu4TopOt681CKeDRvpKcCkFMxDfxbroU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mawosoft.Extensions.BenchmarkDotNet.RecyclableParamsColumnProvider.html",
+          "hash": "SXC5XblQIfUU4oY6O7HiSGnCT0nesE05qJmbzJY49nY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mawosoft.Extensions.BenchmarkDotNet.WhatifFilter.html",
+          "hash": "8gMlR4yTJ4rtlAaSvIRX/emthzs7bzoZCilFWsJ7xlc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mawosoft.Extensions.BenchmarkDotNet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mawosoft.Extensions.BenchmarkDotNet.html",
+          "hash": "WNbNCWghSGrMl80b24fQt8PlmUOQtcRCalWie0+ShcQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "Ss78h+A9IdNNkolHEO2C823n5FzDT3zQHLweETQLStc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "vudTfbPaeQ8yPMmPlvjUwWa8bzFsM/dMQWXj48ev8fE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "2xfH91AC41iD/E/2BDiBMfLFMETyUIsDMwncOszIo7I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "BlPxk5mtl2kgfcZUgkEguqiSAR/EUyUTT4EdebwkQvs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "5bJuiLNX9PgrxIiLx4zjp9CQ8s4FIM/SgmvQ6ZHiSB0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "RvJ/CHkUHn1KyEz705yPyQhFwa7EvX4I7FBgY78v6WU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 16,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
